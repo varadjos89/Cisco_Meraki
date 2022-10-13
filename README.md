@@ -33,11 +33,11 @@ spring.jpa.generate-ddl=true
 2) I would dockerize both the service and deploy them on the kubernetes cluster. The cluster would perform load balancing, deploy new containers if incoming load goes up, destroy extra containers if the load goes down and perform health checks time to time. Additional advantage include deploying new version without compromising current users.
 
 ***Event Based data handling***
-1) I would also add a event based queue in front of our backend microservices to handle calls asynchronously and also to make sure we are not blocking any incoming calls if incoming load suddenly goes up. 
+1) I would add a event based queue in front of backend microservices to handle calls asynchronously and also to make sure we are not blocking any incoming calls if the load suddenly goes up. 
 2) I would also creata a dead letter queue which would include all the failed requests so we can use it to retry all the failed calls.
 
 ***Security***
-1) For security, I would go with mTLS based authentication to make all the calls are secure. mTLS performs authentication not only at the clint side but also at the service side, so we get both client and server authenticated to perform any operations.
+1) For security, I would go with mTLS based authentication to make sure all the calls are secure. mTLS performs two way authentication where it not only performs authentication at the clint side but also at the service side, so we get both client and server authenticated before any operations.
 2) For security, I would convert current HTTP calls into HTTPS so that all the calls would automatically get encrypted.
 
 ***Database***
@@ -46,3 +46,6 @@ spring.jpa.generate-ddl=true
 
 ***Testing***
 1) For testing, I have a written a test case which directly connects with MySQL databases, perform operations on it and verifies the result. If I get more time, I would go with Mockito framework to mock data and would avoid sending any test data into actual database.
+
+***Documentation***
+1) I would create a swagger based documentation so everyone can view the overall API structure.
