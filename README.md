@@ -34,5 +34,5 @@ spring.jpa.generate-ddl=true
 5) For security, I would go with mTLS based authentication to make all the calls are secure. mTLS performs authentication not only at the clint side but also at the service side, so we get both client and server authenticated to perform any operations.
 6) For security, I would convert current HTTP calls into HTTPS so that all the calls would autmocatically get encrypted.
 
-## Databses
+***Databses
 8) For database, I used MySQL to support ACID based properties. We can improves its performace by creating index for device_id and timestamp_start columns. I would also create a date pipeline which will transfer data from the current table into a secondary table so that the primary one would have less records while performing any operation which would also improve its efficiency.
