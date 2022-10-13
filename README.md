@@ -7,7 +7,7 @@ This application helps users collect statistics for all incoming packets
 # Database Set up
 1) Install [MySQL Community Server 8.0.31](https://dev.mysql.com/downloads/mysql/)
 2) Install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) by setting a username and password 
-3) Start Workbench and open a file named [create_database_and_table_query.sql(https://github.com/varadjos89/Cisco_Meraki/blob/master/create_database_and_table_query.sql) from the cloned repository and run commands in it to create your database and table.
+3) Start Workbench and open a file named [create_database_and_table_query.sql](https://github.com/varadjos89/Cisco_Meraki/blob/master/create_database_and_table_query.sql) from the cloned repository and run commands in it to create your database and table.
 
 # Back-end Set up
 1) The Backend is built using Java and uses Spring Boot as a web framework.
