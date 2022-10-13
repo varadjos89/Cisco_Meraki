@@ -10,7 +10,7 @@ This application helps users collect statistics for all incoming packets
 3) Start Workbench and open a file named [create_database_and_table_query.sql](https://github.com/varadjos89/Cisco_Meraki/blob/master/create_database_and_table_query.sql) from the cloned repository and run commands in it to create your database and table.
 
 # Back-end Set up
-1) The Backend is built using Java and uses Spring Boot as a web framework.
+The Backend is built using Java and uses Spring Boot as a web framework. Following are the steps reuired to setup backend service
 2) Install Java 11 locally 
 2) Open a project named packet-tracker-rest-service using IntelliJ/ Eclipse / NetBeans as a Maven project.
 3) Install all the dependencies from [pom.xml](https://github.com/varadjos89/Cisco_Meraki/blob/master/packet-tracker-rest-service/pom.xml) using mvn install.
