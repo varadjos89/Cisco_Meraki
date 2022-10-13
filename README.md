@@ -25,3 +25,12 @@ spring.jpa.generate-ddl=true
 ```
 
 5) Go to test package to run postive and negative test.
+
+# Decisions that I have made and what I would do if I get more time
+1) For the backend service, I decided to go with Spring Boot as a web framework. If, I get more time, I would divided this service into two different microservices, where one would accept all the incoming packets and perform calculations for min, max and avg where as the other service would handle get all packets opertions for the users, who want to see statictics at any point of time.
+2) I would dockerize both the service and deploy them on the kubernetes cluster. The cluster would perform load balancing, deploy new contianers if incoming load goes up, destroy extra containers if the load goes up and perform health checks time to time. Additional advantage include deploying new version without compromising current users.
+3) I would also add a event based queue in front of our backend microservices to handle calls asynchronously and also to make sure we are not blocking any incoming calls if incoming load suddenly goes up. 
+4) I would also creata a dead letter queue which would include all the failed requests so we can use it to retry all the failed calls.
+5) For security, I would go with mTLS based authentication to make all the calls are secure. mTLS performs authentication not only at the clint side but also at the service side, so we get both client and server authenticated to perform any operations.
+6) For security, I would convert current HTTP calls into HTTPS so that all the calls would autmocatically get encrypted.
+7) For database, I used MySQL to support ACID based properties. We can improves its performace by creating index for device_id and timestamp_start columns. I would also create a date pipeline which will transfer data from the current table into a secondary table so that the primary one would have less records while performing any operation which would also improve its efficiency.
