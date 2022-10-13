@@ -37,8 +37,8 @@ spring.jpa.generate-ddl=true
 2) I would also creata a dead letter queue which would include all the failed requests so we can use it to retry all the failed calls.
 
 ***Security***
-7) For security, I would go with mTLS based authentication to make all the calls are secure. mTLS performs authentication not only at the clint side but also at the service side, so we get both client and server authenticated to perform any operations.
-8) For security, I would convert current HTTP calls into HTTPS so that all the calls would autmocatically get encrypted.
+1) For security, I would go with mTLS based authentication to make all the calls are secure. mTLS performs authentication not only at the clint side but also at the service side, so we get both client and server authenticated to perform any operations.
+2) For security, I would convert current HTTP calls into HTTPS so that all the calls would autmocatically get encrypted.
 
 ***Database***
 1) I used MySQL to support ACID based properties. I can improve its performace by creating index for device_id and timestamp_start columns. 
