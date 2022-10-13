@@ -1,4 +1,4 @@
-# Packet Management System
+# Packet Tracker Service
 This application helps users collect statistics for all incoming packets
 
 ## Initial set up
@@ -24,4 +24,4 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.generate-ddl=true
 ```
 
-5) Go to test package run postive and negative test.
+5) Go to test package to run postive and negative test.
