@@ -29,7 +29,7 @@ spring.jpa.generate-ddl=true
 # Decisions that I have made and what I would do if I get more time
 
 ***Backend service with zero downtime***
-1) For the backend service, I decided to go with Spring Boot as a web framework. If, I got more time, I would've divided this service into 2 different microservices, where one would accept a request for all the incoming packets and perform calculations for min, max and avg whereas the other service would handle get all packets operations for a user, who want to see statictics at any point of time.
+1) For the backend service, I decided to go with Spring Boot as a web framework. If, I got more time, I would've divided this service into 2 different microservices, where one would accept a request for all the incoming packets and perform calculations for min, max and avg whereas the other service would handle a request to get all packetsfor those who want to see statictics at any point of time.
 2) I would dockerize both the service and deploy them on the kubernetes cluster. The cluster would perform load balancing, deploy new containers if incoming load goes up, destroy extra containers if the load goes down and perform health checks time to time. Additional advantage include deploying new version without compromising current users.
 
 ***Event Based data handling***
