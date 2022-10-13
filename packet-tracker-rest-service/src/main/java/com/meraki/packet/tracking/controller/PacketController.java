@@ -17,9 +17,29 @@ public class PacketController {
     @Autowired
     private PacketService packetService;
 
-    /*
-    * Get method to retrieve statistics for all packets
-    */
+    /**
+     * <api-description>
+     * Get method to retrieve statistics for all packets
+     * </api-description>
+     *
+     * <api-endpoint>
+     * GET /packets/getstats
+     * </api-endpoint>
+     *
+     * Response:
+     * <api-response>
+     * {
+     *   "results": [
+     *     {
+     *         "device_id": long,
+     *         "timestamp_start": long,
+     *         "min": double,
+     *         "max": double,
+     *         "avg": double
+     *     }
+     *   ]
+     * </api-response>
+     */
     @GetMapping(path="/packets/getstats")
     public ResponseEntity<Optional> getAllPackets() {
         String message = null;
@@ -32,8 +52,33 @@ public class PacketController {
         }
     }
 
-    /*
+    /**
+     * <api-description>
      * Post method to send either a single packet or a list of packets
+     * </api-description>
+     *
+     * <api-endpoint>
+     * POST /packets/bulk/stats
+     * </api-endpoint>
+     *
+     * Payload:
+     * <api-payload>
+     * {
+     *   "device_id": string,
+     *   "value": double,
+     *   "timestamp": long
+     * }
+     * </api-payload>
+     *
+     * Response:
+     * <api-response>
+     * [
+     *   {
+     *     "success": string
+     *     "statusCode": int
+     *   }
+     * ]
+     * </api-response>
      */
     @PostMapping(path="/packets/bulk/stats")
     public ResponseEntity<Optional> calculateMinMaxAvg(@RequestBody List<Packet> packets) {
