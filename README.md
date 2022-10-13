@@ -29,8 +29,8 @@ spring.jpa.generate-ddl=true
 # Decisions that I have made and what I would do if I get more time
 
 ***Backend service with zero downtime***
-1) For the backend service, I decided to go with Spring Boot as a web framework. If, I get more time, I would divided this service into two different microservices, where one would accept all the incoming packets and perform calculations for min, max and avg where as the other service would handle get all packets opertions for the users, who want to see statictics at any point of time.
-2) I would dockerize both the service and deploy them on the kubernetes cluster. The cluster would perform load balancing, deploy new contianers if incoming load goes up, destroy extra containers if the load goes up and perform health checks time to time. Additional advantage include deploying new version without compromising current users.
+1) For the backend service, I decided to go with Spring Boot as a web framework. If, I got more time, I would've divided this service into 2 different microservices, where one would accept all the incoming packets and perform calculations for min, max and avg whereas the other service would handle get all packets operations for the users, who want to see statictics at any point of time.
+2) I would dockerize both the service and deploy them on the kubernetes cluster. The cluster would perform load balancing, deploy new containers if incoming load goes up, destroy extra containers if the load goes down and perform health checks time to time. Additional advantage include deploying new version without compromising current users.
 
 ***Event Based data handling***
 1) I would also add a event based queue in front of our backend microservices to handle calls asynchronously and also to make sure we are not blocking any incoming calls if incoming load suddenly goes up. 
@@ -38,7 +38,7 @@ spring.jpa.generate-ddl=true
 
 ***Security***
 1) For security, I would go with mTLS based authentication to make all the calls are secure. mTLS performs authentication not only at the clint side but also at the service side, so we get both client and server authenticated to perform any operations.
-2) For security, I would convert current HTTP calls into HTTPS so that all the calls would autmocatically get encrypted.
+2) For security, I would convert current HTTP calls into HTTPS so that all the calls would automatically get encrypted.
 
 ***Database***
 1) I used MySQL to support ACID based properties. I can improve its performace by creating index for device_id and timestamp_start columns. 
