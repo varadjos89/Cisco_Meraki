@@ -14,7 +14,7 @@ This application helps users collect statistics for all incoming packets
 2) Install Java 11 locally 
 2) Open a project named packet-tracker-rest-service using IntelliJ/ Eclipse / NetBeans as a Maven project.
 3) Install all the dependencies from [pom.xml](https://github.com/varadjos89/Cisco_Meraki/blob/master/packet-tracker-rest-service/pom.xml) using mvn install.
-4) Update the below file named application.properties with username and password from database setup steps
+4) Update the below a file named [application.properties](https://github.com/varadjos89/Cisco_Meraki/blob/main/packet-tracker-rest-service/src/main/resources/application.properties) with username and password from database setup steps
 
 ```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/recordsDB?createDatabaseIfNotExist=true
